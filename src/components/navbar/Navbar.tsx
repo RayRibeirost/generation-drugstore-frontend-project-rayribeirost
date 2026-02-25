@@ -1,17 +1,13 @@
-import { BasketIcon, UserIcon, MagnifyingGlassIcon, PlusIcon } from "@phosphor-icons/react"
+import { PlusIcon } from "@phosphor-icons/react"
 
 function Navbar() {
   return (
     <div className="flex-row">
       <div className="w-full flex justify-between items-center px-2 py-3 mb-3">
         <img src="src/assets/colored_brand.svg" alt="" className="w-32" />
-        <form className="flex">
-          <input type="text" />
-          <MagnifyingGlassIcon size={20} />
-        </form>
-        <div className="flex">
-          <BasketIcon size={20} weight="fill" />
-          <UserIcon size={20} weight="fill" />
+        <div className="flex gap-2">
+          <p>Categorias</p>
+          <p>Produtos</p>
         </div>
       </div>
       <div className="bg-gray-900 flex py-4 px-5 rounded-xl items-center gap-3 justify-between mb-3">
