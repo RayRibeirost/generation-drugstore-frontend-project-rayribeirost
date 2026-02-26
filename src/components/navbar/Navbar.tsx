@@ -3,6 +3,7 @@ import { findItem } from "../../services/Service"
 import { useEffect, useState } from "react";
 import type Category from "../../models/Category";
 import { Link } from "react-router-dom";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
@@ -13,7 +14,7 @@ function Navbar() {
       try {
         await findItem('/categorias', setCategories)
       } catch(error) {
-        alert("Não foi possível carregar as categorias")
+        ToastAlerta("Não foi possível carregar as categorias", "info")
         console.log(error)
       }
     }
@@ -38,7 +39,7 @@ function Navbar() {
         </div>
       </div>
       <div className="bg-gray-900 flex py-4 px-5 rounded-xl items-center gap-3 justify-between mb-3">
-        <div>
+        <div className="flex gap-3">
           <button className="bg-emerald-400 flex items-center p-1.5 rounded gap-2">
             <PlusIcon size={16} className="text-white" />
             <Link to={"/cadastrarcategoria"}>
@@ -47,6 +48,16 @@ function Navbar() {
               </span>
             </Link>
           </button>
+          <div>
+            <button className="bg-emerald-400 flex items-center p-1.5 rounded gap-2">
+              <PlusIcon size={16} className="text-white" />
+              <Link to={"/cadastrarproduto"}>
+                <span className="font-bold text-white text-sm">
+                  Adicionar produto
+                </span>
+              </Link>
+            </button>
+          </div>
         </div>
 
         <div className="relative">

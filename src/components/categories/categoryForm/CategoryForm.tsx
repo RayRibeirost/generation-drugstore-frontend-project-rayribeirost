@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type Category from "../../../models/Category";
 import { findItem, registerItem, updateItem } from "../../../services/Service";
 import { FileTextIcon } from "@phosphor-icons/react";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function CategoryForm() {
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ function CategoryForm() {
         try {
             await findItem(`/categorias/${id}`, setCategory)
         } catch(error) {
-            alert("Não foi possível carregar a categoria solicitada");
+            ToastAlerta("Não foi possível carregar a categoria solicitada", "info");
             console.log(error)
             previousPage()
         }
@@ -36,16 +37,16 @@ function CategoryForm() {
         if (id !== undefined) {
             try {
                 await updateItem(`/categorias`, category, setCategory)
-                alert("A categoria foi cadastrada com sucesso!")
+                ToastAlerta("A categoria foi atualizada com sucesso!", "success")
             } catch(error) {
-                alert("Erro ao atualizar a categoria")
+                ToastAlerta("Erro ao atualizar a categoria", "error")
             }
         } else {
             try {
               await registerItem(`/categorias`, category, setCategory);
-              alert("A categoria foi atualizada com sucesso!");
+              ToastAlerta("A categoria foi cadastrada com sucesso!", "success");
             } catch (error) {
-              alert("Erro ao cadastrar a categoria");
+              ToastAlerta("Erro ao cadastrar a categoria", "error");
               console.log(error)
             }
         }

@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import { findItem } from "../../services/Service";
 import type Product from "../../models/Product";
 import CardProductHome from "../../components/home/cardProductHome/CardProductHome";
+import { ToastAlerta } from "../../utils/ToastAlerta";
+
 
 function Home() {
 
@@ -20,7 +22,7 @@ function Home() {
       await findItem('/produtos', setProducts)
       console.log(products)
     } catch(error) {
-      alert("Não foi possível carregar os produtos")
+      ToastAlerta("Não foi possível carregar os produtos", "error")
       console.log(error)
     }
   }
@@ -102,10 +104,11 @@ function Home() {
             <p className="text-left mb-3 font-bold">
               Últimos produtos adicionados
             </p>
-            <div>
-              {products.map((product) => (
-                <CardProductHome />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                {
+                products.map((product) => (
+                    <CardProductHome key={product.id} product={product}/>
+                ))}
             </div>
           </>
         )}
