@@ -27,7 +27,7 @@ function Navbar() {
     <div className="flex-row">
       <div className="w-full flex justify-between items-center px-2 py-3 mb-3">
         <Link to={"/"}>
-          <img src="src/assets/colored_brand.svg" alt="" className="w-32" />
+          <img src="/colored_brand.svg" alt="" className="w-32" />
         </Link>
         <div className="flex gap-2">
           <Link to={"/categorias"}>

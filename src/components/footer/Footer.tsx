@@ -70,11 +70,11 @@ function Footer() {
         <div className="flex justify-between">
           <div className="flex flex-col items-start gap-3 flex-wrap">
             <span className="font-bold">Formas de pagamento</span>
-            <img src="src/assets/cards.svg" alt="" />
+            <img src="/cards.svg" alt="" />
           </div>
           <div className="flex flex-col items-start gap-3 flex-wrap">
             <span className="font-bold">A FarmaGen apoia</span>
-            <img src="src/assets/ias_partner.svg" alt="" />
+            <img src="/ias_partner.svg" alt="" />
           </div>
           <div className="flex flex-col items-start gap-3">
             <div>
