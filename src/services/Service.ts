@@ -17,7 +17,7 @@ export const registerItem = async (url: string, data: Object, setData: Function)
 };
 
 export const updateItem = async (url: string, data: Object, setData: Function) => {
-  const response = await api.get(url, data);
+  const response = await api.put(url, data);
   setData(response.data);
 };
 

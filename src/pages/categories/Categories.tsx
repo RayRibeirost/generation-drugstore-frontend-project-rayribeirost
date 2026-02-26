@@ -20,7 +20,7 @@ function Categories() {
   }, [categories.length]);
 
   return (
-      <div>
+      <div className="my-8">
         {categories.length === 0 ? (
           <div className="flex justify-around items-center">
             <div className="flex flex-col items-start justify-center">
