@@ -6,8 +6,30 @@ import {
   PlanetIcon,
   CaretDoubleRightIcon,
 } from "@phosphor-icons/react";
+import { useEffect, useState } from "react";
+import { findItem } from "../../services/Service";
+import type Product from "../../models/Product";
+import CardProductHome from "../../components/home/cardProductHome/CardProductHome";
 
 function Home() {
+
+  const [products, setProducts] = useState<Product[]>([])
+
+  async function findProducts() {
+    try {
+      await findItem('/produtos', setProducts)
+      console.log(products)
+    } catch(error) {
+      alert("Não foi possível carregar os produtos")
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    findProducts();
+  }, [products.length]);
+
+
   return (
     <div className="container flex flex-col gap-3">
       <div>
@@ -61,11 +83,32 @@ function Home() {
         </div>
       </div>
       <div>
-        <p className="text-left mb-3 font-bold">Últimos produtos adicionados</p>
-        <div>
-          Aqui vão os cards de produto, apenas com o preço, sem possibilidade de
-          edição
-        </div>
+        {products.length === 0 ? (
+          <div className="flex justify-around items-center">
+            <div className="flex flex-col items-start justify-center">
+              <div>
+                <h2 className="text-left text-2xl font-bold pb-6">Não há produtos cadastrados!</h2>
+                <p className="text-left">
+                  Cadastre novos produtos para que os <br />
+                  clientes tenham acesso
+                </p>
+              </div>
+              <button className="mt-10 bg-emerald-400 p-3 rounded text-white font-bold">Cadastrar produto</button>
+            </div>
+            <img src="src/assets/products.svg" alt="" />
+          </div>
+        ) : (
+          <>
+            <p className="text-left mb-3 font-bold">
+              Últimos produtos adicionados
+            </p>
+            <div>
+              {products.map((product) => (
+                <CardProductHome />
+              ))}
+            </div>
+          </>
+        )}
       </div>
       <div>
         <p className="text-left mb-3 font-bold">Marcas</p>
