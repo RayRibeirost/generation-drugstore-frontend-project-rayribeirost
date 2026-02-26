@@ -35,7 +35,7 @@ function Home() {
   return (
     <div className="container flex flex-col gap-3">
       <div>
-        <img src="src/assets/home_banner_image.png" alt="" />
+        <img src="/home_banner_image.png" alt="" />
       </div>
       <div className="flex justify-between gap-3 flex-wrap">
         <div className="flex gap-3 items-center bg-gray-200 rounded py-8 px-10">
@@ -97,7 +97,7 @@ function Home() {
               </div>
               <button className="mt-10 bg-emerald-400 p-3 rounded text-white font-bold">Cadastrar produto</button>
             </div>
-            <img src="src/assets/products.svg" alt="" />
+            <img src="/products.svg" alt="" />
           </div>
         ) : (
           <>
@@ -117,28 +117,28 @@ function Home() {
         <p className="text-left mb-3 font-bold">Marcas</p>
         <div className="flex gap-8 flex-wrap">
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/lrp.png" alt="" />
+            <img src="/lrp.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/medley.png" alt="" />
+            <img src="/medley.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/eucerin.png" alt="" />
+            <img src="/eucerin.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/lrp.png" alt="" />
+            <img src="/lrp.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/nivea.png" alt="" />
+            <img src="/nivea.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/medley.png" alt="" />
+            <img src="/medley.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/lrp.png" alt="" />
+            <img src="/lrp.png" alt="" />
           </div>
           <div className="rounded-full w-30 border border-gray-400">
-            <img src="src/assets/eucerin.png" alt="" />
+            <img src="/eucerin.png" alt="" />
           </div>
         </div>
       </div>
@@ -153,7 +153,7 @@ function Home() {
             </button>
           </div>
           <div className="ml-4">
-            <img src="src/assets/covid_test.png" alt="" className="w-60" />
+            <img src="/covid_test.png" alt="" className="w-60" />
           </div>
         </div>
         <div className="bg-gray-200 flex px-15 py-20 rounded gap-5 items-center w-140 justify-between">
@@ -164,7 +164,7 @@ function Home() {
             </button>
           </div>
           <div className="ml-4">
-            <img src="src/assets/vitamin.png" alt="" className="h-60" />
+            <img src="/vitamin.png" alt="" className="h-60" />
           </div>
         </div>
       </div>

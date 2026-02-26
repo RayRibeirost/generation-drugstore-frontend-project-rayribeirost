@@ -41,7 +41,7 @@ function Categories() {
                 </button>
               </Link>
             </div>
-            <img src="src/assets/products.svg" alt="" />
+            <img src="/products.svg" alt="" />
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
