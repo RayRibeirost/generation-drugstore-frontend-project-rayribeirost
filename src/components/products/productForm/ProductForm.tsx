@@ -98,7 +98,6 @@ function ProductForm() {
     })
   }, [category])
 
-  const loadingCategory = category.descricao === "";
 
   return (
     <div className="container border border-gray-400 flex flex-col rounded-xl my-8 overflow-hidden">
