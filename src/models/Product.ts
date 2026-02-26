@@ -5,6 +5,6 @@ export default interface Product {
     nome: string;
     detalhes: string;
     preco: number;
-    foto: string;
+    foto?: string;
     categoria: Category | null;
 }
